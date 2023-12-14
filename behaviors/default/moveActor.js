@@ -1,4 +1,4 @@
-import { ActorBehavior, PawnBehavior } from "../PrototypeBehavior"
+import {  PawnBehavior } from "../PrototypeBehavior"
 
 
 class moveActor extends PawnBehavior {
@@ -12,11 +12,11 @@ class moveActor extends PawnBehavior {
         var geometry = new THREE.BoxGeometry();
 
         var texture1 = new THREE.TextureLoader().load(this.actor);
-        var material1 = new THREE.MeshBasicMaterial({ map: texture1, opacity: 1, transparent: false  });
+        var material1 = new THREE.MeshBasicMaterial({ map: texture1 });
         this.mesh1 = new THREE.Mesh(geometry, material1);
 
         var texture2 = new THREE.TextureLoader().load(this.getMyAvatar());
-        var material2 = new THREE.MeshBasicMaterial({ map: texture2 ,opacity: 1, transparent: false});
+        var material2 = new THREE.MeshBasicMaterial({ map: texture2 });
         this.mesh2 = new THREE.Mesh(geometry, material2);
         this.collider();
     }
@@ -33,16 +33,12 @@ class moveActor extends PawnBehavior {
 
         // Check for collision
         if (box1.intersectsBox(box2)) {
-            this.callMethod();
+            this.jumpFootball(0);
         } else {
             console.log("No collision.");
         }
 
         this.future(200).collider();
-    }
-
-    callMethod() {
-        this.jumpFootball(0);
     }
 
     jumpFootball(elapsedTime) {
@@ -58,10 +54,10 @@ class moveActor extends PawnBehavior {
         }
 
         this.z -= 0.2;
+        // console.log(this.z);
 
         this.set({ translation: [this.x, this.y, this.z] })
-        this.future(10).jumpFootball(elapsedTime+10);
-        console.log(elapsedTime);
+        this.future(10).jumpFootball(elapsedTime + 10);
     }
 
 }

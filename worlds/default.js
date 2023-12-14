@@ -58,7 +58,7 @@ export function init(Constants) {
                 translation: [0.08387091818273174, -1.2317309578093156, -9.093990249238825],
                 scale: [0.20823504258396383, 0.20823504258396383, 0.20823504258396383],
                 rotation: [0, 0.6945823403158495, 0, -0.7194132140302663],
-                layers: ["pointer"],
+                layers: ["pointer","walk"],
                 behaviorModules: ["CollisionThree"],
                 name: "football (1).glb",
                 dataLocation: "3T3Er72zeWOUWYfsB-4Gpu4WXC2bNEKC6aMNQ4tJu7acPCAgJCdue3syPTgxJ3ohJ3o3JjslITEgej07eyF7LgEgIwQbLhIhGwdlHz0zGQ49YWdtLBIQE2xkZns9O3o3JjslITEgejk9NyY7IjEmJzF6ODs3NTgwMSIwMTI1ITggey43PSUYJ2VtYx9mMC4aZGIyODEcCzkNAWY2ZCEeOBodOQAFOT1iPzY4BGR7MDUgNXsSMxMNZDkNGjYZBgInGA0tBRgeLBk8E2Q7GxYDMwZ5IjosYSIGOQ4ZODU_",
