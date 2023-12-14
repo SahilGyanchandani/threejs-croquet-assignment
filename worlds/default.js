@@ -3,25 +3,27 @@
 // info@croquet.io
 
 export function init(Constants) {
-    Constants.AvatarNames = ["newwhite"];
+    Constants.AvatarNames = ["newWhite"]
 
     /* Alternatively, you can specify a card spec for an avatar,
        instead of a string for the partical file name, to create your own avatar.
        You can add behaviorModules here. Also, if the system detects a behavior module
        named AvatarEventHandler, that is automatically installed to the avatar.
-        {
-            type: "3d",
-            modelType: "glb",
-            name: "rabbit",
-            dataLocation: "./assets/avatars/newwhite.zip",
-            dataRotation: [0, Math.PI, 0],
-            dataScale: [0.3, 0.3, 0.3],
-        }
-    */
+       */
+    // {
+    //     type: "3d",
+    //     modelType: "glb",
+    //     name: "rabbit",
+    //     behaviorModules:["MoveActor"],
+    //     dataLocation: "./assets/avatars/newwhite.zip",
+    //     dataRotation: [0, Math.PI, 0],
+    //     dataScale: [0.3, 0.3, 0.3],
+    // }
+    // ]
 
     Constants.UserBehaviorDirectory = "behaviors/default";
     Constants.UserBehaviorModules = [
-        "lights.js", "move.js"
+        "lights.js", "move.js", "moveActor.js"
     ];
 
     Constants.DefaultCards = [
@@ -53,19 +55,20 @@ export function init(Constants) {
         },
         {
             card: {
-                translation: [6.609990192842255, -1.146047395181116, -9.093990249238825],
+                translation: [0.08387091818273174, -1.2317309578093156, -9.093990249238825],
                 scale: [0.20823504258396383, 0.20823504258396383, 0.20823504258396383],
                 rotation: [0, 0.6945823403158495, 0, -0.7194132140302663],
                 layers: ["pointer"],
+                behaviorModules: ["CollisionThree"],
                 name: "football (1).glb",
                 dataLocation: "3T3Er72zeWOUWYfsB-4Gpu4WXC2bNEKC6aMNQ4tJu7acPCAgJCdue3syPTgxJ3ohJ3o3JjslITEgej07eyF7LgEgIwQbLhIhGwdlHz0zGQ49YWdtLBIQE2xkZns9O3o3JjslITEgejk9NyY7IjEmJzF6ODs3NTgwMSIwMTI1ITggey43PSUYJ2VtYx9mMC4aZGIyODEcCzkNAWY2ZCEeOBodOQAFOT1iPzY4BGR7MDUgNXsSMxMNZDkNGjYZBgInGA0tBRgeLBk8E2Q7GxYDMwZ5IjosYSIGOQ4ZODU_",
-                behaviorModules: ["MoveFootball"],
                 dataScale: [2.132073633812013, 2.132073633812013, 2.132073633812013],
                 fileName: "football (1).glb",
                 modelType: "glb",
                 shadow: true,
                 singleSided: true,
                 type: "3d",
+            
             }
         }
     ];
